@@ -1,19 +1,25 @@
 import React from "react";
 import "./App.css";
-import Header from "./components/Header";
+import "bootstrap/dist/css/bootstrap.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { ToastContainer, toast } from "react-toastify";
+//import { Button } from "reactstrap";
 
 function App() {
+  const btnHandle = () => {
+    toast("this is my first message", { position: "top-center" });
+  };
   return (
-    <div style={{ background: "grey", width: 440 }}>
-      <Header name="Umair" title="first card" />
-      <hr />
-      <Header name="Waseem" title="second card" />
-      <h1>This is my react app</h1>
-      <p>This is paragraph in app.js</p>
-      <hr />
-      <Header name="Sufiyan" title="third card" />
-      <hr />
-      <Header name="Uroos" title="Footer" />
+    <div>
+      <ToastContainer />
+      <h1>Hello</h1>
+      <button
+        type="button"
+        class="btn btn-outline-secondary"
+        onClick={btnHandle}
+      >
+        first react button
+      </button>
     </div>
   );
 }
